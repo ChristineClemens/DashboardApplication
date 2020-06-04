@@ -19,3 +19,5 @@ function fetchData(data) {
     console.log(data);
     document.querySelector(".city").innerHTML = `${data.name} <br> ${data.main.temp} <br> ${moment().format('MMMM Do YYYY, h:mm a')}`;
 }
+
+//Test Comment
