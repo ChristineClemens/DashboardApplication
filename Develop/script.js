@@ -8,9 +8,10 @@ function getLocation() {
         console.log(latitude);
         var longitude = position.coords.longitude;
         console.log(longitude);
-        var todayURL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${APIKey}`;
-        var forecastURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${APIKey}`;
-        
+        var units;
+        var todayURL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=${units}&appid=${APIKey}`;
+        var forecastURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=${units}&appid=${APIKey}`;
+
         fetchData(todayURL);
         fetchForecast(forecastURL);
     })
@@ -54,13 +55,23 @@ function displayForecast(data) {
     }
 }
     document.querySelector("#forecastBtn").addEventListener("click", displayForecast);
-
+    function changeUnits() {
+        if (document.querySelector("#metric").onclick) {
+        let units = "metric";
+        } else if (document.querySelector("#imperial").onclick) {
+        let units = "imperial";
+    }
+}
 getLocation();
 
 //jQuery required for modal usage in HTML.
-$('#forecastBtn').on('shown.bs.modal', function () {
-    $('#forecastInput').trigger('focus')
+$('#forecastModal').on('shown.bs.modal', function () {
+    $('#forecastModalInput').trigger('focus')
   })
 //----------------------------------------------------------------------------------------------
-// `<img src='http://openweathermap.org/img/wn/${data.list[1].weather[0].icon}.png'>`
-// `<img style="position: absolute; text-align: right; src='http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png'> ${data.name} <br> ${data.main.temp} <br> ${localTime}`;
+
+        document.querySelector("#metric").addEventListener("click", changeMetric);
+        document.querySelector("#imperial").addEventListener("click", changeImperial);
+
+        function changeMetric() {var units = "metric";};
+        function changeImperial() {var units = "imperial";};
