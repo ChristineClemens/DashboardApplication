@@ -28,6 +28,7 @@ function displayData(data) {
     console.log(data);
     document.querySelector("#forecastBtn").innerHTML = `<img src='http://openweathermap.org/img/wn/${data.weather[0].icon}.png'> ${data.name} <br> ${data.main.temp}`;
 }
+
 //Christine - Add current time to NavBar that automatically updates every second.
 let localTime = function() {
         document.querySelector("#timeStamp").innerHTML = `${moment().format('MMMM Do YYYY, h:mm a')}`;
@@ -48,7 +49,7 @@ function displayForecast(data) {
         document.querySelector("#forecast").innerHTML += 
         `<div id="forecastInput" style='text-align: right'>
             <img src='http://openweathermap.org/img/wn/${data.list[i].weather[0].icon}.png'>
-            ${data.city.name} <br> Temperature: ${data.list[i].main.temp} Feels like: ${data.list[i].main.feels_like}
+            ${data.list[i].dt_txt} <br> High: ${data.list[i].main.temp_max} Low: ${data.list[i].main.temp_min} <br> Description: ${data.list[i].weather[0].description}
         </div>`;
     }
 }
