@@ -35,7 +35,7 @@ function getLocation(units) {
         }
         //Christine - Add 5-day forecast information to modal pop-up.
         function displayForecast(data) {
-            console.log(data);
+            document.querySelector("#forecast").innerHTML = "";
             for (i = 1; i <= 5; i++) {
                 document.querySelector("#forecast").innerHTML += 
                 `<div class="row" style="text-align: center; border: 1px solid lightgray; margin: 5px;">
