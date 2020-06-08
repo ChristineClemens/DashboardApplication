@@ -20,12 +20,12 @@ As everyday mobile users ourselves, we aimed to develop a dashboard application 
 * Deploy our application on Github Pages.
 
 **For our presentation, we were required to include:**   
-* *Elevator Pitch*: a one minute description of our application.
-* *Concept*: the inclusion of our user story and our motivation for development.
-* *Process*: an explanation of the technologies used, the method of delegation and task assignment, challenges faced, as well as successes.
-* *Demo*: a pre-recorded video demonstration in which our application is run through and explained.
-* *Future Development*: an outline of the future direction of our web application and ways to expand.
-* *Links*: provide access to the Github repository in which the information is stored, as well as access to the deployed application itself. 
+* ***Elevator Pitch***: a one minute description of our application.
+* ***Concept***: the inclusion of our user story and our motivation for development.
+* ***Process***: an explanation of the technologies used, the method of delegation and task assignment, challenges faced, as well as successes.
+* ***Demo***: a pre-recorded video demonstration in which our application is run through and explained.
+* ***Future Development***: an outline of the future direction of our web application and ways to expand.
+* ***Links***: provide access to the Github repository in which the information is stored, as well as access to the deployed application itself. 
 ### Process:
 As a group, we viewed our project as an opportunity to solidify our understanding of topics with which we had previously encountered difficulties. Because of this, elements of our project were assigned according to who would benefit the most from working through the steps required to complete said element. 
 
