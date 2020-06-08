@@ -3,11 +3,10 @@ var localTime = moment().format('MMMM Do YYYY, h:mm a');
 
 
 //Christine - Use geolocation API to retrieve location using coordinates.
-function getLocation() {
+function getLocation(units) {
     navigator.geolocation.getCurrentPosition(function(position) {
         var latitude = position.coords.latitude;
         var longitude = position.coords.longitude;
-        var units;
         var todayURL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=${units}&appid=${APIKey}`;
         var forecastURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=${units}&appid=${APIKey}`;
     
@@ -45,11 +44,9 @@ function displayForecast(forecastData) {
 
 //Christine - Add current time to NavBar that automatically updates every second.
 let localTime = function() {
-    document.querySelector("#timeStamp").innerHTML = `${moment().format('MMMM Do YYYY, h:mm a')}`;
+    document.querySelector("#timeStamp").innerHTML = `${moment().format('MMMM Do YYYY, h:mm:ss a')}`;
 }
 setInterval(localTime, 1000);
-
-getLocation();
 
 //jQuery required for modal usage in HTML.
 $('#forecastModal').on('shown.bs.modal', function () {
